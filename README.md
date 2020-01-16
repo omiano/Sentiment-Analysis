@@ -10,6 +10,14 @@ My pre-processing steps included converting each phrase to lower-case, removing 
 
 I split the data into three sets such that 70% of the data points are for use in training, 15% for validation, and another 15% for testing.
 
+## Model
+
+I approached this task by implementing a Long Short-Term Memory recurrent neural network. 
+
+For each phrase in the training data, I run the forward pass which creates a 50 dimensional word embedding for the input phrase with PyTorch’s Embedding module. Then it runs the LSTM, which takes word embeddings as inputs and outputs hidden states with dimensionality 50. Next, it maps from the hidden state space to the sentiment score space using PyTorch’s Linear module, which applies a linear transformation to the incoming data. After that, it applies a softmax followed by a logarithm to the sentiment score space, with the dimension along which this is computed being 1. Finally, it returns the last element of the output of the log_softmax function.
+
+I used Negative Log Likelihood for my loss function and Stochastic Gradient Descent as my optimizer.
+
 ## Conclusions
 
 After optimizing the LSTM through various, the combination of hyperparameters that yielded the highest validation accuracy was an embedding dimension of 50, hidden dimension of 50, learning rate of 0.1, 7 epochs, and batch size of 50. Making predictions on the test set using these hyperparameter values resulted in a test loss of 0.0098, and test accuracy of 0.481735.
