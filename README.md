@@ -20,7 +20,7 @@ I used Negative Log Likelihood for my loss function and Stochastic Gradient Desc
 
 ## Conclusions
 
-After optimizing the LSTM through various, the combination of hyperparameters that yielded the highest validation accuracy was an embedding dimension of 50, hidden dimension of 50, learning rate of 0.1, 7 epochs, and batch size of 50. Making predictions on the test set using these hyperparameter values resulted in a test loss of 0.0098, and test accuracy of 0.481735.
+After optimizing the LSTM, the combination of hyperparameters that yielded the highest validation accuracy was an embedding dimension of 50, hidden dimension of 50, learning rate of 0.1, 7 epochs, and batch size of 50. Making predictions on the test set using these hyperparameter values resulted in a test loss of 0.0098, and test accuracy of 0.481735.
 
 ## References
 
